@@ -7,7 +7,6 @@ Additional features to be added are:
 
 --> different programming languages categories
 something like this:
-|_Language
-  |_Category
-    |_Series
-
+  -->Language
+     -->Category
+        -->Series
