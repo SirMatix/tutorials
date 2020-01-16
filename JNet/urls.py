@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
 	path('', include('tutorials.urls')),  # points to our tutorials urls file
     path('admin/', admin.site.urls),
+    path('tinymce/', include('tinymce.urls')),
 ]
