@@ -13,7 +13,7 @@ Requirements:
 
 Additional features to be added are:
 
-- different programming languages
+- Different programming languages
 -->Language -->Category -->Series
 
 Note:
