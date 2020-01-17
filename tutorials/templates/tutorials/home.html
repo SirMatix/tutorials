@@ -1,20 +1,19 @@
-<html>
-<head>
-	{% load static %}
-	<link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
-</head>
+{% extends "tutorials/header.html" %}
 
-
-<body>
-	{% for tut in tutorials %}  <!-- for loop -->
-
-		<p>{{tut.title}}</p>
-		<p>{{tut.published}}</p>  
-		<p>{{tut.content|safe}}</p>
-		<br/><br/>
-
-
-	{% endfor %} <!-- end of for loop -->
-</body>
-<script src="{% static 'tinymce/js/prism.js' %}"></script>
-</html>
+{% block content %}
+    <div class="row">
+    {% for tut in tutorials %}  <!-- for loop -->
+        <div class="col s12 m6 l4">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">{{tut.title}}</span>
+              <p style="font-size:70%">{{tut.published}}</p>
+              <p>{{tut.content|safe}}</p>
+            </div>
+            <div class="card-action">
+            </div>
+          </div>
+        </div>
+    {% endfor %} <!-- end of for loop -->
+    </div>
+{% endblock %}
