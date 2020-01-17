@@ -10,12 +10,13 @@ class TutorialAdmin(admin.ModelAdmin):
     we are overwritting the default model structure to display
     fields in the manner defined by us
     """
-    # dividing fi
+    # dividing fields into fieldsets
     fieldsets = [
         ("Title/date", {"fields": ["title", "published"]}),
         ("Content", {"fields": ["content"]})
     ]
 
+    # overridding form field to include tinyMCE widget
     formfield_overrides = {
         models.TextField: {'widget': TinyMCE()}
     }

@@ -17,3 +17,7 @@ Additional features to be added are:
 
 - different programming languages
 -->Language -->Category -->Series
+
+Note:
+
+When deploying project to production change the secret key.

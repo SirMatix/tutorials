@@ -5,7 +5,7 @@ from datetime import datetime
 
 class Tutorial(models.Model):
 	"""
-		Base tutorial class with title, content and published date
+		Base tutorial model with title, content and published date
 	"""
 	title = models.CharField(max_length=200)
 	content = models.TextField()
