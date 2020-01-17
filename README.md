@@ -5,17 +5,15 @@ This is a project based upon a sentdex django tutorial --> https://pythonprogram
 
 Requirements: 
 
-- [ ] Managing tutorials
-- [ ] User registration
-- [ ] User login
-- [ ] 
-- [ ]
-- [ ] 
+- Managing tutorials
+- User registration
+- User login
+- Display tutorials
 
 
 Additional features to be added are:
 
-- different programming languages
+- Different programming languages
 -->Language -->Category -->Series
 
 Note:
