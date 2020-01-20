@@ -1,8 +1,8 @@
 <html>
 <head>
-	{% load static %}
-	<link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
-	<!-- Compiled and minified CSS -->
+  {% load static %}
+  <link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
   <link href="{% static 'tutorials/css/materialize.css' %}" rel="stylesheet">
 
     <!-- Compiled and minified JavaScript -->
@@ -12,17 +12,10 @@
 
 <body>
 
-    <nav>
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo left">Tutorials</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/">Home</a></li>
-        <li><a href="/register">Register</a></li>
-        <li><a href="/login">Login</a></li>
-      </ul>
-    </div>
-    </nav>
- 
+
+  {% include "tutorials/includes/navbar.html" %}
+  {% include "tutorials/includes/messages.html" %}
+
   <div class="container">
     {% block content %}
     {% endblock %}
