@@ -4,13 +4,16 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import logout, authenticate, login
 from django.contrib import messages
 
+
+
+
 def homepage(request):
     return render(request=request,
                   template_name="tutorials/home.html",
                   context={"tutorials": Tutorial.objects.all})
 
+
 def register(request):
-    
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():    # fields filled in the way the should be filled out
@@ -33,3 +36,13 @@ def register(request):
                   template_name = "tutorials/register.html",
                   context={"form":form})
 
+def logout_request(request):
+    logout(request)
+    messages.info(request, "Logged out succesfully!")
+    return redirect("tutorials:homepage")
+
+def login_request(request):
+    form = AuthenticationForm()
+    return render(request, 
+                  "main/login.html",
+                  {"form":form})
