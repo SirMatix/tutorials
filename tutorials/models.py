@@ -14,6 +14,18 @@ from datetime import datetime
 # 	def __str__(self):
 # 		return self.language
 
+class News(models.Model):
+	title = models.CharField(max_length=200)
+	content = models.TextField()
+	published = models.DateField()
+
+	class Meta:
+	# gives the proper plural name for admin
+		verbose_name_plural ="News"
+
+	def __str__(self):
+		return self.title
+
 class TutorialCategory(models.Model):
 	category = models.CharField(max_length=200)
 	#language = models.ForeignKey(TutorialLanguage, default=1, verbose_name="Language", on_delete=models.SET_DEFAULT)

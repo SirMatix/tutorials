@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Tutorial, TutorialSeries, TutorialCategory #TutorialLanguage
+from .models import Tutorial, TutorialSeries, TutorialCategory, News #TutorialLanguage
 from tinymce.widgets import TinyMCE
 from django.db import models
 
@@ -26,6 +26,7 @@ class TutorialAdmin(admin.ModelAdmin):
 
 # Registering models
 
+admin.site.register(News)
 admin.site.register(TutorialSeries)
 admin.site.register(TutorialCategory)
 #admin.site.register(TutorialLanguage)

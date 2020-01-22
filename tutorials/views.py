@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Tutorial, TutorialCategory, TutorialSeries
+from .models import Tutorial, TutorialCategory, TutorialSeries, News
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout, authenticate, login
 from django.contrib import messages
@@ -54,8 +54,14 @@ def single_slug(request, single_slug):
 
 def homepage(request):
     return render(request=request,
-                  template_name="tutorials/categories.html",
-                  context={"categories": TutorialCategory.objects.all})
+                  template_name="tutorials/home.html",
+                  context={"news": News.objects.all})
+
+
+def tutorials(request):
+    return render(request=request,
+              template_name="tutorials/categories.html",
+              context={"categories": TutorialCategory.objects.all})
 
 
 def register(request):
