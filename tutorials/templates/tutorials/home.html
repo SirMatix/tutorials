@@ -1,19 +1,38 @@
 {% extends "tutorials/header.html" %}
 
+
 {% block content %}
 
 
   <div class="row">
-    {% for new in news %}
-    <div class="col s12 s12 l12">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">{{new.title}}</span>
-          <p style="font-size:70%">{{new.published}}</p>
-          <p>{{new.content}}</p>
+    <div class="col l12">
+      {% for wel in welcome %}
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title center"><strong>{{wel.title}}</strong></span>
+          <p>{{wel.content | safe}}</p>
+          <p style="font-size:70%; float:right">{{wel.published}}, author: {{wel.author}}</p>
         </div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
+
+  <div class="row">
+    <ul class="collapsible">
+    {% for new in news %}
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons right">new_releases</i>{{new.title}}
+        </div>
+        <div class="collapsible-body">
+          <span>{{new.content | safe}}</span>
+          <p style="font-size:70%; float:right">{{new.published}}, author: {{new.author}}</p>
+        </div>
+      </li>
+    {% endfor %}
+    </ul>    
+  </div>
+
+
 {% endblock %}

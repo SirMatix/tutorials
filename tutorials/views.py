@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Tutorial, TutorialCategory, TutorialSeries, News
+from .models import Tutorial, TutorialCategory, TutorialSeries
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout, authenticate, login
 from django.contrib import messages
 from .forms import NewUserForm # importing overwritten user creation form
+from news.models import News, Welcome
 
 
 
@@ -55,7 +56,8 @@ def single_slug(request, single_slug):
 def homepage(request):
     return render(request=request,
                   template_name="tutorials/home.html",
-                  context={"news": News.objects.all})
+                  context={"news": News.objects.all,
+                           "welcome": Welcome.objects.all})
 
 
 def tutorials(request):
@@ -90,7 +92,8 @@ def register(request):
 
 def logout_request(request):
     '''
-
+        This function handles for user logout requests,
+        it displays a message upon succesful logout.
     '''
     logout(request)
     messages.info(request, "Logged out succesfully!")
@@ -98,7 +101,10 @@ def logout_request(request):
 
 def login_request(request):
     '''
-
+        This function handles for user login requests.
+        Authenticates username and password. 
+        After succesful login displays a message and redirects
+        to homepage
     '''
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
@@ -120,4 +126,5 @@ def login_request(request):
                   context={"form":form})
 
 
-
+def account(request):
+    pass
