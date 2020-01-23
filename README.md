@@ -3,6 +3,10 @@ Django tutorials project
 
 This is a project based upon a sentdex django tutorial --> https://pythonprogramming.net/django-web-development-python-tutorial/
 
+If you want to check out the project how it looks just clone the repo, open Command Prompt in the main folder and run "py manage.py runserver".
+
+
+
 Requirements: 
 
 - Display welcome message and news on a homepage
