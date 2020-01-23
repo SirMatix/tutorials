@@ -5,10 +5,12 @@ This is a project based upon a sentdex django tutorial --> https://pythonprogram
 
 Requirements: 
 
+- Display welcome message and news on a homepage
 - Managing tutorials
-- User registration
-- User login
 - Display tutorials
+- User registration
+- User login, logout
+- User account page where he can change his data
 
 
 Additional features to be added are:
